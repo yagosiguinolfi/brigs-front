@@ -1,13 +1,33 @@
-import { AppBar, Box, Container, IconButton, Typography } from "@mui/material";
+import React from 'react'
+import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
 
 function Home() {
   const pages = ["Products", "Pricing", "Blog"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+  const [anchorElNav, setAnchorElNav] = useState();
+  const [anchorElUser, setAnchorElUser] = useState();
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
-    <Container>
+    <div style={{margin:0, padding:0, width:'100%'}}>
       <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
@@ -131,7 +151,7 @@ function Home() {
       </AppBar>
       <h1>Homepage</h1>
       <button>Usuários</button>
-    </Container>
+    </div>
   );
 }
 
