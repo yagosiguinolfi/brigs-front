@@ -1,194 +1,36 @@
+import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import AdbIcon from "@mui/icons-material/Adb";
-import MenuIcon from "@mui/icons-material/Menu";
-import colors from "../../utils/colors";
-
-import logoWhite from "../../assets/logo-vetor-white.png";
+import '@fontsource/ubuntu/300.css';
+import '@fontsource/ubuntu/500.css';
 
 function Home() {
-  const pages = ["Home", "Produtos", "Quem somos"];
-  const settings = ["Perfil", "Sair"];
-
-  const [anchorElNav, setAnchorElNav] = useState();
-  const [anchorElUser, setAnchorElUser] = useState();
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
-    <div style={{ margin: 0, padding: 0, width: "100%" }}>
-      <AppBar position="static">
-        <Container maxWidth="xl" style={{ backgroundColor: colors.brow }}>
-          <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-            <Box
-              component="img"
-              sx={{
-                height: 233,
-                width: 350,
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
-                display: { xs: "none", md: "flex" },
-                mr: 1,
-              }}
-              alt="logo-brigs"
-              src={logoWhite}
-            />
-            {/* <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography> */}
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            <Box
-              component="img"
-              sx={{
-                height: 233,
-                width: 350,
-                maxHeight: { xs: 233, md: 167 },
-                maxWidth: { xs: 350, md: 250 },
-                display: { xs: "flex", md: "none" },
-                mr: 1,
-              }}
-              alt="The house from the offer."
-              src={logoWhite}
-            />
-            {/* <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography> */}
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page}
-                </Button>
-              ))}
-            </Box>
-
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-      <h1>Homepage</h1>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 0, padding: 0, width: "100%" }}>
+      <Box sx={{ fontFamily: 'Ubuntu', fontSize: 30, padding: '30px', display: 'flex', flexDirection:'column', alignItems: 'center' }}>
+        Bem vindo(a) à Brig's!
+        <Box sx={{ fontFamily: 'Ubuntu', fontWeight: 300, fontSize: 16}}>
+          Lorem ipsum amet maecenas suspendisse tincidunt vulputate dui ullamcorper lacinia venenatis nulla, 
+          per sed sem pharetra elit suscipit euismod aenean adipiscing mattis, etiam turpis sem eros quisque 
+          hac fusce eleifend sapien morbi. amet at consequat facilisis erat potenti nibh conubia etiam, vitae 
+          lectus odio fames vulputate vitae potenti.
+        </Box>
+      </Box>
+      <Box sx={{ fontFamily: 'Ubuntu', fontSize: 30, padding: '30px', display: 'flex', flexDirection:'column', alignItems: 'center' }}>
+        Conheça nossos produtos!
+        <Box sx={{fontSize:16, fontWeight: 300}}>
+          Teste de carrossel de produtos.
+        </Box>
+      </Box>
+      <Box sx={{ fontFamily: 'Ubuntu', fontSize: 30, padding: '30px', display: 'flex', flexDirection:'column', alignItems: 'center' }}>
+        Seja nosso cliente!
+        <Box sx={{fontWeight: 300, fontSize: 16}}>
+          Lorem ipsum amet maecenas suspendisse tincidunt vulputate dui ullamcorper lacinia venenatis nulla, 
+          per sed sem pharetra elit suscipit euismod aenean adipiscing mattis, etiam turpis sem eros quisque 
+          hac fusce eleifend sapien morbi. amet at consequat facilisis erat potenti nibh conubia etiam, vitae 
+          lectus odio fames vulputate vitae potenti.
+        </Box>
+      </Box>
       <button>Usuários</button>
     </div>
   );
